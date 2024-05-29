@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
-import '../App.css';
+import React from 'react';
 import Form from '../components/Form';
+
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   return (
-    <div className='App'>
-      <Form/>
+    <div className='flex items-center justify-center min-h-screen bg-gray-200'>
+      <Form />
     </div>
   );
 };

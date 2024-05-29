@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import '../App.css';
 import { EyeIcon, EyeOffIcon, MailIcon } from '@heroicons/react/outline';
 import Logo from '../assests/Logo.svg';
+import SubmitButton from './SubmitButton';
 
 const Form = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,47 +11,41 @@ const Form = () => {
   };
 
   return (
-    <form className='theform' action="">
-      <div className="logoContainer">
-        <img src={Logo} alt="Logo" style={{ width: "100px", height: "40px", margin: "0 auto", display: "block" }} />
+    <form className='flex flex-col gap-4 bg-white p-8 rounded-lg w-96 mx-auto'>
+      <div className="flex justify-center mb-4 bg-sky-800 p-2 rounded-lg w-32 mx-auto">
+        <img src={Logo} alt="Logo" className="w-24 h-10" />
       </div>
-
-      <h1 className="formTitle">
+      <h1 className="text-center text-gray-700 text-xl font-semibold">
         Login to your account
       </h1>
-
-      <div className="inputGroup">
-        <label htmlFor="email" className="inputLabel">
-          Email
-        </label>
-        <div className="inputWithIcon">
-          <MailIcon className="inputIcon" height={25} width={25} />
+      <div className="flex flex-col">
+        <label htmlFor="email" className="text-gray-600 mb-2">Email</label>
+        <div className="flex items-center border border-gray-400 rounded-md p-2 w-75" >
+          <MailIcon className="text-gray-500 h-6 w-6 mr-2" />
           <input
             id="email"
             type="text"
             placeholder="example@gmail.com"
-            className="textInput"
+            className="flex-1 bg-transparent outline-none"
           />
         </div>
       </div>
-
-      <div className="inputGroup">
-        <label htmlFor="password" className="inputLabel">
-          Password
-        </label>
-        <div className="inputWithIcon">
+      <div className="flex flex-col">
+        <label htmlFor="password" className="text-gray-600 mb-1">Password</label>
+        <div className="flex items-center border border-gray-400 rounded-md p-2">
           <input
             id="password"
             type={showPassword ? "text" : "password"}
             placeholder="Password"
-            className="textInput"
+            className="flex-1 bg-transparent outline-none"
           />
           {showPassword ? (
-            <EyeOffIcon className="toggleIcon" height={20} width={20} onClick={togglePasswordVisibility} />
+            <EyeOffIcon className="text-gray-500 h-6 w-6 ml-2 cursor-pointer" onClick={togglePasswordVisibility} />
           ) : (
-            <EyeIcon className="toggleIcon" height={20} width={20} onClick={togglePasswordVisibility} />
+            <EyeIcon className="text-gray-500 h-6 w-6 ml-2 cursor-pointer" onClick={togglePasswordVisibility} />
           )}
         </div>
+        <SubmitButton text='Login' width={40} height={40} backgroundColor='#21438D' />
       </div>
     </form>
   );
