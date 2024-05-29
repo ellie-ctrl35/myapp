@@ -21,7 +21,7 @@ const Form = () => {
       <div className="flex flex-col">
         <label htmlFor="email" className="text-gray-600 mb-2">Email</label>
         <div className="flex items-center border border-gray-400 rounded-md p-2 w-75">
-          <MailIcon className="text-gray-500 h-6 w-6 mr-2" />
+          <MailIcon className="text-gray-500 h-4 w-4 mr-2" />
           <input
             id="email"
             type="text"
@@ -40,9 +40,9 @@ const Form = () => {
             className="flex-1 bg-transparent outline-none font-sans"
           />
           {showPassword ? (
-            <EyeOffIcon className="text-gray-500 h-6 w-6 ml-2 cursor-pointer" onClick={togglePasswordVisibility} />
+            <EyeOffIcon className="text-gray-500 h-4 w-4 ml-2 cursor-pointer" onClick={togglePasswordVisibility} />
           ) : (
-            <EyeIcon className="text-gray-500 h-6 w-6 ml-2 cursor-pointer" onClick={togglePasswordVisibility} />
+            <EyeIcon className="text-gray-500 h-4 w-4 ml-2 cursor-pointer" onClick={togglePasswordVisibility} />
           )}
         </div>
         <div className="flex justify-center mt-8 bg-sky-800 p-1 rounded-md">
