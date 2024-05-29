@@ -1,16 +1,16 @@
 import React from 'react';
 
-const SubmitButton = ({ onClick, height, text, backgroundColor, width }) => {
+const SubmitButton = ({ onClick, height, text, backgroundColor, width, className }) => {
   return (
     <button
       type="submit"
       onClick={onClick}
-      className={`rounded-md py-2 text-black ${backgroundColor} ${width}`}
-      style={{ height }}
+      style={{ height, backgroundColor, width }}
+      className={`rounded-md text-white p-2 ${className}`}
     >
       {text}
     </button>
   );
-}
+};
 
 export default SubmitButton;
