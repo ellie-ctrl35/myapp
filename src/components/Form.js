@@ -5,10 +5,11 @@ import SubmitButton from './SubmitButton';
 import { ToastContainer, toast } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 
-const Form = () => {
+const Form = ({ onSuccess }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -20,6 +21,8 @@ const Form = () => {
       toast.info("Please Enter An Email"); // Display error toast
     } else if (password === "") {
       toast.info("Please Enter your Password");
+    }else{
+      onSuccess();
     }
   };
 
