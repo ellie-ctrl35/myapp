@@ -4,7 +4,7 @@ import { RiMenu5Line } from "@react-icons/all-files/ri/RiMenu5Line";
 
 const UserProfile = ({ toggleSidebar }) => {
   return (
-    <div className="flex items-center space-x-1 rounded-md p-3 bg-gray-200 mx-1">
+    <div className="flex items-center space-x-1 rounded-md p-3 bg-gray-200 mx-2 my-4">
       <div className="w-12 h-12 bg-red-700 rounded-full">
         <img
           className="w-full h-full"

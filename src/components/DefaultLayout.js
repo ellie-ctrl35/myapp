@@ -3,9 +3,9 @@ import SideNav from './SideNav';
 
 const DefaultLayout = ({ children }) => {
   return (
-    <div className="flex">
+    <div className="flex w-full h-full">
       <SideNav />
-      <main className="flex-1 p-8 bg-gray-100">
+      <main className="flex-1 bg-white">
         {children}
       </main>
     </div>
