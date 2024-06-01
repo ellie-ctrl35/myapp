@@ -17,8 +17,9 @@ const Form = ({ onSuccess }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(email, password)
     if (email === "") {
-      toast.info("Please Enter An Email"); // Display error toast
+      toast.info("Please Enter An Email");
     } else if (password === "") {
       toast.info("Please Enter your Password");
     }else{
@@ -61,7 +62,7 @@ const Form = ({ onSuccess }) => {
           )}
         </div>
         <div className="flex justify-center mt-8 bg-[#BA1B1B] p-1 rounded-md">
-          <SubmitButton text="Sign in" width="100%" height="40px" className="w-full" />
+          <SubmitButton text="Sign in" width="100%" height="40px" className="w-full"  onClick={handleSubmit} />
         </div>
       </div>
       <ToastContainer />

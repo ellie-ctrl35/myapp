@@ -6,7 +6,7 @@ const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSuccess = () => {
-    setIsLoggedIn(false);
+    setIsLoggedIn(true);
   };
 
   return (

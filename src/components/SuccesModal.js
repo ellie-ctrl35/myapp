@@ -1,6 +1,7 @@
 import React from 'react';
-import { CheckCircleIcon } from '@heroicons/react/solid';
+import { CheckCircleIcon } from '@heroicons/react/outline';
 import SubmitButton from './SubmitButton';
+import { Link } from 'react-router-dom';
 
 const SuccessModal = () => {
   return (
@@ -11,16 +12,18 @@ const SuccessModal = () => {
         <p className="text-gray-500 mt-2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
           Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation.
+          Ut enim ad minim veniam, quis .
         </p>
+        <Link to="/dashboard">
         <SubmitButton
           text="Go To Dashboard"
-          backgroundColor="red"
+          backgroundColor="#930006"
           height="3rem"
           width="100%"
           className="mt-6"
-          onClick={() => alert('Navigating to dashboard')}
+          
         />
+        </Link>
       </div>
     </div>
   );
