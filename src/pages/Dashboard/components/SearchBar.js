@@ -8,9 +8,9 @@ import User from "../../../assests/User.svg";
 
 const SearchBar = () => {
   return (
-    <div className="w-full bg-white h-16 flex items-center justify-between">
-      <div className="flex items-center border h-10 w-64 border-gray-400 mx-4 rounded-md focus-within:border-red-500">
-        <FiSearch className="text-gray-500 ml-2" size={20} />
+    <div className="w-full bg-slate-50 h-16 flex items-center justify-between">
+      <div className="flex items-center bg-white border h-10 w-64 border-gray-400 mx-4 rounded-md focus-within:border-red-500">
+        <FiSearch className="ml-2" size={20} />
         <input
           type="text"
           placeholder="Search..."

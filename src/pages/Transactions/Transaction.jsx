@@ -1,8 +1,11 @@
 import React from 'react'
+import SearchBar from '../Dashboard/components/SearchBar'
 
 const Transaction = () => {
   return (
-    <div>Transaction</div>
+    <div>
+        <SearchBar />
+    </div>
   )
 }
 

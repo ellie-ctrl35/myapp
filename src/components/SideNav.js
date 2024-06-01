@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useLocation } from "react-router-dom";
 import { RiHome6Fill } from "@react-icons/all-files/ri/RiHome6Fill";
 import { AiOutlineDollar } from "@react-icons/all-files/ai/AiOutlineDollar";
 import { HiChartSquareBar } from "@react-icons/all-files/hi/HiChartSquareBar";
@@ -11,6 +11,7 @@ import UserProfile from "./UserProfile";
 
 const SideNav = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const location = useLocation();
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
@@ -41,7 +42,7 @@ const SideNav = () => {
                     : "flex items-center p-2 space-x-3 rounded-md hover:bg-white mx-2"
                 }
               >
-                <RiHome6Fill color="#930006" className="w-4 h-4" />
+                <RiHome6Fill color={location.pathname === "/dashboard" ? "#930006" : "#5B6B79"}  className="w-4 h-4" />
                 {!isCollapsed && <span>Dashboard</span>}
               </NavLink>
             </li>
@@ -54,7 +55,7 @@ const SideNav = () => {
                     : "flex items-center p-2 space-x-3 rounded-md hover:bg-red-100 mx-2"
                 }
               >
-                <AiOutlineDollar color="#5B6B79" className="w-4 h-4" />
+                <AiOutlineDollar color={location.pathname === "/transactions" ? "#930006" : "#5B6B79"}  className="w-4 h-4" />
                 {!isCollapsed && <span>Transactions</span>}
               </NavLink>
             </li>
