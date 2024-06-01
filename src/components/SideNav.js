@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { RiHome6Fill } from "@react-icons/all-files/ri/RiHome6Fill";
 import { AiOutlineDollar } from "@react-icons/all-files/ai/AiOutlineDollar";
 import { HiChartSquareBar } from "@react-icons/all-files/hi/HiChartSquareBar";
+import { FaUser } from "@react-icons/all-files/fa/FaUser";
+import { BsGear } from "@react-icons/all-files/bs/BsGear";
 import redde from "../assests/redde.svg";
 import UserProfile from "./UserProfile";
 
@@ -24,7 +26,7 @@ const SideNav = () => {
                 to="/dashboard"
                 className={({ isActive }) =>
                   isActive
-                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2"
+                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2 text-red-700"
                     : "flex items-center p-2 space-x-3 rounded-md hover:bg-white mx-2"
                 }
               >
@@ -41,8 +43,8 @@ const SideNav = () => {
                 to="/transactions"
                 className={({ isActive }) =>
                   isActive
-                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2"
-                    : "flex items-center p-2 space-x-3 rounded-md hover:bg-white mx-2"
+                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2 text-red-700"
+                    : "flex items-center p-2 space-x-3 rounded-md hover:bg-red-100 mx-2"
                 }
               >
                 <AiOutlineDollar color="#5B6B79" className="w-4 h-4" />
@@ -56,13 +58,43 @@ const SideNav = () => {
                 to="/charges"
                 className={({ isActive }) =>
                   isActive
-                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2"
+                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2 text-red-700"
                     : "flex items-center p-2 space-x-3 rounded-md hover:bg-red-100 mx-2"
                 }
               >
                 <HiChartSquareBar color="#5B6B79" className="w-4 h-4" />
                 <span>
                   Charges
+                </span>
+              </NavLink>
+            </li>
+            <li className="rounded-sm">
+            <NavLink
+                to="/charges"
+                className={({ isActive }) =>
+                  isActive
+                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2 text-red-700"
+                    : "flex items-center p-2 space-x-3 rounded-md hover:bg-red-100 mx-2"
+                }
+              >
+                <FaUser color="#5B6B79" className="w-4 h-4" />
+                <span>
+                  Merchant
+                </span>
+              </NavLink>
+            </li>
+            <li className="rounded-sm">
+            <NavLink
+                to="/charges"
+                className={({ isActive }) =>
+                  isActive
+                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2 text-red-700"
+                    : "flex items-center p-2 space-x-3 rounded-md hover:bg-red-100 mx-2"
+                }
+              >
+                <BsGear color="#5B6B79" className="w-4 h-4" />
+                <span>
+                  My Actions
                 </span>
               </NavLink>
             </li>
