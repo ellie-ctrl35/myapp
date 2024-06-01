@@ -1,0 +1,16 @@
+{
+    "transactions": [
+        {"month": "Jan", "item01": 120, "item02": 180},
+        {"month": "Feb", "item01": 150, "item02": 170},
+        {"month": "Mar", "item01": 200, "item02": 150},
+        {"month": "Apr", "item01": 250, "item02": 210},
+        {"month": "May", "item01": 280, "item02": 230},
+        {"month": "Jun", "item01": 240, "item02": 220},
+        {"month": "Jul", "item01": 300, "item02": 250},
+        {"month": "Aug", "item01": 160, "item02": 180},
+        {"month": "Sep", "item01": 130, "item02": 170},
+        {"month": "Oct", "item01": 170, "item02": 190},
+        {"month": "Nov", "item01": 140, "item02": 160},
+        {"month": "Dec", "item01": 200, "item02": 220}
+    ]
+}

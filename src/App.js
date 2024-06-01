@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Transaction from "./pages/Transactions/Transaction";
 import DefaultLayout from "./components/DefaultLayout";
 
 function App() {
@@ -16,7 +17,14 @@ function App() {
             </DefaultLayout>
           }
         />
-        {/* Add other routes here that require the DefaultLayout */}
+        <Route
+          path="/transactions"
+          element={
+            <DefaultLayout>
+              <Transaction />
+            </DefaultLayout>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
