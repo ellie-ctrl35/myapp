@@ -50,8 +50,8 @@ const SideNav = () => {
                 to="/transactions"
                 className={({ isActive }) =>
                   isActive
-                    ? "flex items-center p-1 space-x-3 rounded-md bg-red-100 mx-2 text-red-700"
-                    : "flex items-center p-1 space-x-3 rounded-md hover:bg-red-100 mx-2"
+                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2 text-red-700"
+                    : "flex items-center p-2 space-x-3 rounded-md hover:bg-red-100 mx-2"
                 }
               >
                 <AiOutlineDollar color={location.pathname === "/transactions" ? "#930006" : "#5B6B79"}  className="w-4 h-4" />
