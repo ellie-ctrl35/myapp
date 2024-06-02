@@ -5,7 +5,7 @@ const DefaultLayout = ({ children }) => {
   return (
     <div className="flex w-full h-full">
       <SideNav />
-      <main className="flex-1 bg-white">
+      <main className="flex-1 bg-white h-full">
         {children}
       </main>
     </div>

@@ -1,32 +1,38 @@
-import {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Chart } from 'primereact/chart';
 import { FaEllipsisV } from '@react-icons/all-files/fa/FaEllipsisV';
 import 'primereact/resources/themes/saga-blue/theme.css';  // theme
 import 'primereact/resources/primereact.min.css';           // core css
-import 'primeicons/primeicons.css'; 
-import Transactions from './AllTransaction.json'                        // icons
+import 'primeicons/primeicons.css';                         // icons
+import Transactions from './AllTransaction.json';
 
 const BarChart = () => {
-    const [items,setItem01]=useState([])
-    
-    const data = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        datasets: [
-            {
-                label: 'Item 01',
-                backgroundColor: '#930006',
-                borderColor: '#c0392b',
-                data: [120, 150, 200, 250, 280, 240, 300, 160, 130, 170, 140, 200]
-            },
-            {
-                label: 'Item 02',
-                backgroundColor: '#f8d5d6',
-                borderColor: '#e74c3c',
-                data: [180, 170, 150, 210, 230, 220, 250, 180, 170, 190, 160, 220]
-            }
-        ]
-    };
-   
+    const [chartData, setChartData] = useState({ labels: [], datasets: [] });
+
+    useEffect(() => {
+        const labels = Transactions.transactions.map(transaction => transaction.month);
+        const item01Data = Transactions.transactions.map(transaction => transaction.item01);
+        const item02Data = Transactions.transactions.map(transaction => transaction.item02);
+
+        setChartData({
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Item 01',
+                    backgroundColor: '#930006',
+                    borderColor: '#c0392b',
+                    data: item01Data
+                },
+                {
+                    label: 'Item 02',
+                    backgroundColor: '#f8d5d6',
+                    borderColor: '#e74c3c',
+                    data: item02Data
+                }
+            ]
+        });
+    }, []);
+
     const options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -37,7 +43,7 @@ const BarChart = () => {
             },
             tooltip: {
                 callbacks: {
-                    label: function(tooltipItem) {
+                    label: function (tooltipItem) {
                         return `$${tooltipItem.raw}`;
                     }
                 }
@@ -54,14 +60,11 @@ const BarChart = () => {
                 }
             },
             y: {
-                title: {
-                    display: false,
-                    text: 'Amount'
-                },
+                
                 beginAtZero: true,
                 ticks: {
-                    callback: function(value) {
-                        return `$${value}`;
+                    callback: function (value) {
+                        return `${value}`;
                     }
                 },
                 grid: {
@@ -70,11 +73,11 @@ const BarChart = () => {
             }
         }
     };
-    
+
     return (
         <div className="mx-2 p-0">
-            <div >
-                <Chart type="bar" data={data} options={options} />
+            <div>
+                <Chart type="bar" data={chartData} options={options} />
             </div>
         </div>
     );

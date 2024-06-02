@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import SearchBar from "./components/SearchBar";
 import ComponentType1 from "./components/DataInfo";
 import AppInfo from "./components/AppInfo";
@@ -10,6 +10,7 @@ import BarChart from "./components/BarChart";
 import Footer from "./components/Footer";
 
 const Dashboard = () => {
+  const [activeTab, setActiveTab] = useState('All Transactions');
   return (
     <div className="w-full mx-0 px-0 py-0 bg-white">
       <SearchBar />
@@ -47,11 +48,26 @@ const Dashboard = () => {
         />
       </div>
       <div className="mx-4 border border-gray-400 rounded-md ">
-        <ul className="flex flex-row space-x-5 border-gray-200 border-b-2 px-5 py-2">
-            <li className="text-gray-300"><a className="active:border-b border-red-500">All Transactions</a></li>
-            <li className="text-gray-300">New Users</li>
-            <li className="text-gray-300">Total Users</li>
-        </ul>
+      <ul className="flex flex-row space-x-5 border-gray-200 border-b-2 px-5 pt-3">
+                <li 
+                    className={`text-gray-600 pb-4 ${activeTab === 'All Transactions' ? 'border-b-2 border-red-500' : ''}`}
+                    onClick={() => setActiveTab('All Transactions')}
+                >
+                    <a>All Transactions</a>
+                </li>
+                <li 
+                    className={`text-gray-600 ${activeTab === 'New Users' ? 'border-b-2 border-red-500' : ''}`}
+                    onClick={() => setActiveTab('New Users')}
+                >
+                    <a>New Users</a>
+                </li>
+                <li 
+                    className={`text-gray-600 ${activeTab === 'Total Users' ? 'border-b-2 border-red-500' : ''}`}
+                    onClick={() => setActiveTab('Total Users')}
+                >
+                    <a>Total Users</a>
+                </li>
+            </ul>
         <BarChart />
       </div>
       <Footer/>
