@@ -4,7 +4,7 @@ import { RiMenu5Line } from "@react-icons/all-files/ri/RiMenu5Line";
 
 const UserProfile = ({ toggleSidebar }) => {
   return (
-    <div className="flex items-center space-x-1 rounded-md p-3 bg-gray-200 mx-2 my-4">
+    <div className="flex items-center space-x-2 rounded-md p-3 bg-gray-200 mx-2 my-4">
       <div className="w-12 h-12 bg-red-700 rounded-full">
         <img
           className="w-full h-full"
@@ -12,8 +12,8 @@ const UserProfile = ({ toggleSidebar }) => {
           alt="User Profile"
         />
       </div>
-      <div className="flex-1">
-        <h3 className="text-lg font-semibold text-gray-800">Emmanuel</h3>
+      <div className="flex-1 mr-2">
+        <h3 className="text-md font-semibold text-gray-800">Emmanuel</h3>
         <p className="text-sm text-gray-500">Administrator</p>
       </div>
       <RiMenu5Line onClick={toggleSidebar} className="cursor-pointer" color="#5B6B79" />

@@ -7,6 +7,7 @@ import useradd from "../../assests/user-add.svg";
 import chart from "../../assests/chart.svg";
 import profile from "../../assests/profile-2user.svg";
 import BarChart from "./components/BarChart";
+import Footer from "./components/Footer";
 
 const Dashboard = () => {
   return (
@@ -14,7 +15,7 @@ const Dashboard = () => {
       <SearchBar />
       <div className="mt-3 mx-3 rounded-md">
         <h1 className="text-md text-left text-red-500 ">
-          <span className="bg-red-300 p-1 rounded-md">Dashboard</span>
+          <span className="bg-red-100 p-1 rounded-md">Dashboard</span>
         </h1>
       </div>
       <div className=" flex flex-row items-center justify-between mx-4 my-5 gap-3">
@@ -46,8 +47,14 @@ const Dashboard = () => {
         />
       </div>
       <div className="mx-4 border border-gray-400 rounded-md ">
+        <ul className="flex flex-row space-x-5 border-gray-200 border-b-2 px-5 py-2">
+            <li className="text-gray-300"><a className="active:border-b border-red-500">All Transactions</a></li>
+            <li className="text-gray-300">New Users</li>
+            <li className="text-gray-300">Total Users</li>
+        </ul>
         <BarChart />
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -1,11 +1,14 @@
-import React from 'react';
+import {useState} from 'react';
 import { Chart } from 'primereact/chart';
 import { FaEllipsisV } from '@react-icons/all-files/fa/FaEllipsisV';
 import 'primereact/resources/themes/saga-blue/theme.css';  // theme
 import 'primereact/resources/primereact.min.css';           // core css
-import 'primeicons/primeicons.css';                         // icons
+import 'primeicons/primeicons.css'; 
+import Transactions from './AllTransaction.json'                        // icons
 
 const BarChart = () => {
+    const [items,setItem01]=useState([])
+    
     const data = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [
@@ -23,7 +26,7 @@ const BarChart = () => {
             }
         ]
     };
-
+   
     const options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -43,7 +46,7 @@ const BarChart = () => {
         scales: {
             x: {
                 title: {
-                    display: true,
+                    display: false,
                     text: 'Month'
                 },
                 grid: {
@@ -52,7 +55,7 @@ const BarChart = () => {
             },
             y: {
                 title: {
-                    display: true,
+                    display: false,
                     text: 'Amount'
                 },
                 beginAtZero: true,
@@ -70,10 +73,6 @@ const BarChart = () => {
     
     return (
         <div className="mx-2 p-0">
-            <div className="flex justify-between items-center mb-4">
-                <h5 className="text-sm text-gray-500 font-semibold ml-2">All Transactions</h5>
-        
-            </div>
             <div >
                 <Chart type="bar" data={data} options={options} />
             </div>
