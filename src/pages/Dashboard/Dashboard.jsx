@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import ComponentType1 from "./components/DataInfo";
 import AppInfo from "./components/AppInfo";
@@ -8,9 +8,10 @@ import chart from "../../assests/chart.svg";
 import profile from "../../assests/profile-2user.svg";
 import BarChart from "./components/BarChart";
 import Footer from "./components/Footer";
+import TransactionsTable from "./components/TransactionTables";
 
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState('All Transactions');
+  const [activeTab, setActiveTab] = useState("All Transactions");
   return (
     <div className="w-full mx-0 px-0 py-0 bg-white">
       <SearchBar />
@@ -19,7 +20,7 @@ const Dashboard = () => {
           <span className="bg-red-100 p-1 rounded-md">Dashboard</span>
         </h1>
       </div>
-      <div className=" flex flex-row items-center justify-between mx-4 my-5 gap-3">
+      <div className="flex flex-row items-center justify-between mx-4 my-5 gap-3">
         <ComponentType1
           title="All Transactions"
           data="$30200"
@@ -47,30 +48,39 @@ const Dashboard = () => {
           iconBgColor="bg-red-100"
         />
       </div>
-      <div className="mx-4 border border-gray-400 rounded-md ">
-      <ul className="flex flex-row space-x-5 border-gray-200 border-b-2 px-5 pt-3">
-                <li 
-                    className={`text-gray-600 pb-4 ${activeTab === 'All Transactions' ? 'border-b-2 border-red-500' : ''}`}
-                    onClick={() => setActiveTab('All Transactions')}
-                >
-                    <a>All Transactions</a>
-                </li>
-                <li 
-                    className={`text-gray-600 ${activeTab === 'New Users' ? 'border-b-2 border-red-500' : ''}`}
-                    onClick={() => setActiveTab('New Users')}
-                >
-                    <a>New Users</a>
-                </li>
-                <li 
-                    className={`text-gray-600 ${activeTab === 'Total Users' ? 'border-b-2 border-red-500' : ''}`}
-                    onClick={() => setActiveTab('Total Users')}
-                >
-                    <a>Total Users</a>
-                </li>
-            </ul>
+      <div className="mx-4 border border-gray-400 rounded-md mb-16">
+        <ul className="flex flex-row space-x-5 border-gray-200 border-b-2 px-5 pt-3">
+          <li
+            className={`text-gray-600 pb-4 ${
+              activeTab === "All Transactions"
+                ? "border-b-2 border-red-500"
+                : ""
+            }`}
+            onClick={() => setActiveTab("All Transactions")}
+          >
+            <a>All Transactions</a>
+          </li>
+          <li
+            className={`text-gray-600 ${
+              activeTab === "New Users" ? "border-b-2 border-red-500" : ""
+            }`}
+            onClick={() => setActiveTab("New Users")}
+          >
+            <a>New Users</a>
+          </li>
+          <li
+            className={`text-gray-600 ${
+              activeTab === "Total Users" ? "border-b-2 border-red-500" : ""
+            }`}
+            onClick={() => setActiveTab("Total Users")}
+          >
+            <a>Total Users</a>
+          </li>
+        </ul>
         <BarChart />
       </div>
-      <Footer/>
+      <TransactionsTable />
+      <Footer />
     </div>
   );
 };
