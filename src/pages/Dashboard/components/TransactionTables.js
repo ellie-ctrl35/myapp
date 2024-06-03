@@ -10,8 +10,6 @@ const TransactionsTable = () => {
     { transId: 'Website down for one week', brandTransId: 'Support', username: 'Yesterday', appName: 'Yesterday', brandGroup: 'Yesterday' },
     { transId: 'text', brandTransId: 'Support', username: 'Today 2:00', appName: 'Today 2:00', brandGroup: 'Today 2:00' },
     { transId: 'Website down for one week', brandTransId: 'Support', username: 'Yesterday', appName: 'Yesterday', brandGroup: 'Yesterday' },
-    
-    // Add more transactions as needed
   ];
 
   return (
