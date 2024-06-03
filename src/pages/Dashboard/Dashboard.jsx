@@ -9,9 +9,16 @@ import profile from "../../assests/profile-2user.svg";
 import BarChart from "./components/BarChart";
 import Footer from "./components/Footer";
 import TransactionsTable from "./components/TransactionTables";
+import NewUsersChart from "./components/NewUsersChart";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("All Transactions");
+  const [toogleCharts, setToggleChart] = useState("Transactions");
+
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+    setToggleChart(tabName === "New Users" ? "NewUsers" : "Transactions");
+  };
   return (
     <div className="w-full mx-0 px-0 py-0 bg-white">
       <SearchBar />
@@ -56,7 +63,7 @@ const Dashboard = () => {
                 ? "border-b-2 border-red-500"
                 : ""
             }`}
-            onClick={() => setActiveTab("All Transactions")}
+            onClick={() => handleTabClick("All Transactions")}
           >
             <a>All Transactions</a>
           </li>
@@ -64,7 +71,9 @@ const Dashboard = () => {
             className={`text-gray-600 ${
               activeTab === "New Users" ? "border-b-2 border-red-500" : ""
             }`}
-            onClick={() => setActiveTab("New Users")}
+            onClick={() =>
+              handleTabClick("New Users")
+            }
           >
             <a>New Users</a>
           </li>
@@ -72,12 +81,13 @@ const Dashboard = () => {
             className={`text-gray-600 ${
               activeTab === "Total Users" ? "border-b-2 border-red-500" : ""
             }`}
-            onClick={() => setActiveTab("Total Users")}
+            onClick={() => handleTabClick("Total Users")}
           >
             <a>Total Users</a>
           </li>
         </ul>
-        <BarChart />
+        {toogleCharts === "Transactions"&& <BarChart/>}
+        {toogleCharts === "NewUsers"&&<NewUsersChart/>}
       </div>
       <TransactionsTable />
       <Footer />
