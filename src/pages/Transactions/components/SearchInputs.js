@@ -1,6 +1,13 @@
-import React from 'react'
+import {useState} from 'react'
 
-const SearchInputs = () => {
+
+const SearchInputs = ({Transactions}) => {
+  const [searchQuery,setSearchQuery]=useState("");
+
+  // const filteredReports = Transactions.filter((report) =>
+  // report.EquipmentName.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
+// console.log(filteredReports)
   return (
     <div className="mx-4 my-4 border  border-black rounded-md flex flex-col justify-between">
         <h1 className="text-md text-left p-2 border-b border-gray-200">
@@ -17,6 +24,8 @@ const SearchInputs = () => {
               placeholder="Enter Transaction ID"
               className="w-full h-9 
             p-1 border border-gray-200 rounded-sm"
+            value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
           <div className='w-full'>

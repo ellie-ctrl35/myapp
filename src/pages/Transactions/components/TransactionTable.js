@@ -1,65 +1,8 @@
 import React from "react";
+import transactions from './Transactions.json'
 
 const TransactionsTable = () => {
-  const transactions = [
-    {
-      transId: "text",
-      brandTransId: "Support",
-      username: "Today 2:00",
-      appName: "Today 2:00",
-      brandGroup: "Today 2:00",
-    },
-    {
-      transId: "Website down for one week",
-      brandTransId: "Support",
-      username: "Yesterday",
-      appName: "Yesterday",
-      brandGroup: "Yesterday",
-    },
-    {
-      transId: "text",
-      brandTransId: "Support",
-      username: "Today 2:00",
-      appName: "Today 2:00",
-      brandGroup: "Today 2:00",
-    },
-    {
-      transId: "Website down for one week",
-      brandTransId: "Support",
-      username: "Yesterday",
-      appName: "Yesterday",
-      brandGroup: "Yesterday",
-    },
-    {
-      transId: "text",
-      brandTransId: "Support",
-      username: "Today 2:00",
-      appName: "Today 2:00",
-      brandGroup: "Today 2:00",
-    },
-    {
-      transId: "Website down for one week",
-      brandTransId: "Support",
-      username: "Yesterday",
-      appName: "Yesterday",
-      brandGroup: "Yesterday",
-    },
-    {
-      transId: "text",
-      brandTransId: "Support",
-      username: "Today 2:00",
-      appName: "Today 2:00",
-      brandGroup: "Today 2:00",
-    },
-    {
-      transId: "Website down for one week",
-      brandTransId: "Support",
-      username: "Yesterday",
-      appName: "Yesterday",
-      brandGroup: "Yesterday",
-    },
-  ];
-
+  const Transactions = transactions.transactions
   return (
     <div className="overflow-x-auto mb-24 mx-4 border-gray-200 border  rounded-md">
       <div className="flex flex-row justify-between items-center">
@@ -89,7 +32,7 @@ const TransactionsTable = () => {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {transactions.map((transaction, index) => (
+          {Transactions.map((transaction, index) => (
             <tr key={index}>
               <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
                 {transaction.transId}
