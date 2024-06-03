@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from "../Dashboard/components/SearchBar";
 import { RiArrowRightSLine } from "@react-icons/all-files/ri/RiArrowRightSLine";
 import SearchInputs from "./components/SearchInputs";
-import TransactionsTable from "../Dashboard/components/TransactionTables";
+import TransactionsTable from "./components/TransactionTable";
 
 const Transaction = () => {
   return (

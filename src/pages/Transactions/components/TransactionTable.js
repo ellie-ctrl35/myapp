@@ -70,8 +70,8 @@ const TransactionsTable = () => {
       </div>
       <table className="min-w-full bg-white border">
         <thead className="bg-red-100 border-b">
-          <tr>
-            <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          <tr className="bg-gray-300 ">
+            <th className="px-4 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               TransID
             </th>
             <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -91,19 +91,19 @@ const TransactionsTable = () => {
         <tbody className="bg-white divide-y divide-gray-200">
           {transactions.map((transaction, index) => (
             <tr key={index}>
-              <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
                 {transaction.transId}
               </td>
-              <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
                 {transaction.brandTransId}
               </td>
-              <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
                 {transaction.username}
               </td>
-              <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
                 {transaction.appName}
               </td>
-              <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
                 {transaction.brandGroup}
               </td>
             </tr>
