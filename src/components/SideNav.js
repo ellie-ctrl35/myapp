@@ -22,14 +22,14 @@ const SideNav = () => {
         <div style={{marginTop:"0%"}} onClick={toggleSidebar} className="flex items-center justify-center p-0">
           <img src={redde} alt="Logo" className="w-14 h-14" />
         </div>
-        {!isCollapsed && (
+        {!isCollapsed ? (
           <>
             <UserProfile toggleSidebar={toggleSidebar} />
             <h2 style={{marginTop:"1.8rem"}} className="text-xs font-semibold text-gray-800 text-left ml-4 mt-4 opacity-50 mx-2">
               NAVIGATION
             </h2>
           </>
-        )}
+        ):(<div style={{height:"2%",width:"100%"}}></div>)}
         <div className="flex-1 mx-1">
           <ul className="pt-2 pb-4 space-y-1 text-sm">
             <li className="rounded-sm">
