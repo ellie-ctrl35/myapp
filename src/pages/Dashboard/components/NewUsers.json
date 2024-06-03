@@ -1,0 +1,17 @@
+{
+    "users": [
+        {"month": "Jan", "item01": 10},
+        {"month": "Feb", "item01": 15},
+        {"month": "Mar", "item01": 20},
+        {"month": "Apr", "item01": 20},
+        {"month": "May", "item01": 28},
+        {"month": "Jun", "item01": 24},
+        {"month": "Jul", "item01": 30},
+        {"month": "Aug", "item01": 60},
+        {"month": "Sep", "item01": 30},
+        {"month": "Oct", "item01": 10},
+        {"month": "Nov", "item01": 40},
+        {"month": "Dec", "item01": 44}
+    ]
+}
+
