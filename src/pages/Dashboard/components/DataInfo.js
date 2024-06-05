@@ -2,7 +2,7 @@ import React from 'react';
 
 const ComponentType1 = ({ title, data, icon, iconBgColor, timePeriod }) => {
     return (
-        <div className="p-4 rounded-lg border border-gray-300 mb-4 w-full max-w-sm">
+        <div className="p-4 rounded-lg bg-white border border-gray-300 mb-4 w-full max-w-sm">
             
             <div className="flex flex-col w-full">
                 <div className="flex justify-between items-center">

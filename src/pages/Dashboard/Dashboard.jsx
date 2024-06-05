@@ -20,7 +20,7 @@ const Dashboard = () => {
     setToggleChart(tabName === "New Users" ? "NewUsers" : "Transactions");
   };
   return (
-    <div className="w-full mx-0 px-0 py-0 bg-white">
+    <div className="w-full mx-0 px-0 py-0 bg-gray-100">
       <SearchBar />
       <div className="mt-3 mx-3 rounded-md">
         <h1 className="text-md text-left text-red-500 ">
@@ -55,10 +55,10 @@ const Dashboard = () => {
           iconBgColor="bg-red-100"
         />
       </div>
-      <div className="mx-4 border border-gray-400 rounded-md mb-16">
+      <div className="mx-4 border bg-white border-gray-400 rounded-md mb-16">
         <ul className="flex flex-row space-x-5 border-gray-200 border-b-2 px-5 pt-3">
           <li
-            className={`text-gray-600 pb-4 ${
+            className={`text-gray-600 pb-4 cursor-pointer ${
               activeTab === "All Transactions"
                 ? "border-b-2 border-red-500"
                 : ""
@@ -68,7 +68,7 @@ const Dashboard = () => {
             <a>All Transactions</a>
           </li>
           <li
-            className={`text-gray-600 ${
+            className={`text-gray-600 cursor-pointer ${
               activeTab === "New Users" ? "border-b-2 border-red-500" : ""
             }`}
             onClick={() =>
@@ -78,7 +78,7 @@ const Dashboard = () => {
             <a>New Users</a>
           </li>
           <li
-            className={`text-gray-600 ${
+            className={`text-gray-600 cursor-pointer ${
               activeTab === "Total Users" ? "border-b-2 border-red-500" : ""
             }`}
             onClick={() => handleTabClick("Total Users")}

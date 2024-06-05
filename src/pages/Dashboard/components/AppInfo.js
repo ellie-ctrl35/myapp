@@ -3,7 +3,7 @@ import { FaEllipsisV } from '@react-icons/all-files/fa/FaEllipsisV';
 
 const AppInfo = ({ title, data, icon, iconBgColor }) => {
     return (
-        <div className="p-4 rounded-lg border border-gray-300 mb-4 w-full max-w-sm">
+        <div className="p-4 rounded-lg border bg-white border-gray-300 mb-4 w-full max-w-sm">
             <div className="flex items-center justify-between">
                 <div className={`flex items-center justify-center rounded-md p-3 ${iconBgColor}`}>
                     <img src={icon} alt={title} className="w-4 h-4" />

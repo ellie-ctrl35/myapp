@@ -61,7 +61,7 @@ const TransactionsTable = () => {
   ];
 
   return (
-    <div className="overflow-x-auto mb-24 mx-4 border-gray-200 border  rounded-md">
+    <div className="overflow-x-auto bg-white mb-24 mx-4 border-gray-200 border  rounded-md">
       <div className="flex flex-row justify-between items-center">
         <h1 className="text-md text-black text-left ml-4 my-3">
           Transactions
