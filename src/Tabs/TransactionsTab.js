@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import { Tabs, Tab } from '@mui/material';
 import Transaction from '../pages/Transactions/Transaction';
-import UnConfirmations from '../pages/AccountSummary/UnConfirmations';  
-import PendingSettlement from '../pages/AccountSummary/PendingSettlement';
 import AddTransactions from '../pages/Transactions/AddTransactions';
+import Confirmations from '../pages/Transactions/Confirmations';
 
 
 const TransactionsTabs = () => {
@@ -13,14 +12,14 @@ const TransactionsTabs = () => {
     return (
       <div>
         <Tabs value={currentTab} aria-label="transactions tabs">
-          <Tab label="Confirmed Balances" value="confirmed-balances" component={Link} to="/transactions/confirmed-balances" />
-          <Tab label="Unconfirmed Balances" value="unconfirmed-balances" component={Link} to="/transactions/unconfirmed-balances" />
-          <Tab label="Pending Settlement" value="pending-settlement" component={Link} to="/transactions/pending-settlement" />
+          <Tab label="Review" value="review" component={Link} to="/transactions/review" />
+          <Tab label="Confirmations" value="confirmations" component={Link} to="/transactions/confirmations" />
+          <Tab label="Add Transactions" value="add-transactions" component={Link} to="/transactions/add-transactions" />
         </Tabs>
         <Routes>
-          <Route path="confirmed-balances" element={<Transaction />} />
-          <Route path="unconfirmed-balances" element={<UnConfirmations />} />
-          <Route path="pending-settlement" element={<PendingSettlement />} />
+          <Route path="review" element={<Transaction />} />
+          <Route path="confirmations" element={<Confirmations />} />
+          <Route path="add-transactions" element={<AddTransactions />} />
         </Routes>
       </div>
     );

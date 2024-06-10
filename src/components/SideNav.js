@@ -71,9 +71,14 @@ const SideNav = () => {
               </NavLink>
             </li>
             <li className="rounded-sm">
-              <div
+              <NavLink
                 onClick={() => setTransactionsOpen(!isTransactionsOpen)}
-                className="flex items-center p-2 space-x-3 rounded-md cursor-pointer hover:bg-red-100 mx-2"
+                to="/account-summary"
+                className={({ isActive }) =>
+                  isActive
+                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2 text-red-700"
+                    : "flex items-center p-2 space-x-3 rounded-md hover:bg-red-100 mx-2"
+                }
               >
                 <AiOutlineDollar
                   color={
@@ -84,12 +89,12 @@ const SideNav = () => {
                   className="w-4 h-4"
                 />
                 {!isCollapsed && <span>Account Summary</span>}
-                {isTransactionsOpen ? (
+                {!isCollapsed && <>{isTransactionsOpen ? (
                   <IoIosArrowDown className="w-4 h-4 ml-auto" />
                 ) : (
                   <IoIosArrowForward className="w-4 h-4 ml-auto" />
-                )}
-              </div>
+                )}</>}
+              </NavLink>
               <div
                 className={`transition-max-height duration-300 ease-in-out overflow-hidden ${
                   isTransactionsOpen ? "max-h-96" : "max-h-0"
@@ -101,7 +106,7 @@ const SideNav = () => {
                     <NavLink
                       to="/account-summary/confirmed-balances"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
                       Confirmed Balances
@@ -112,10 +117,10 @@ const SideNav = () => {
                     <NavLink
                       to="/account-summary/unconfirmed-balances"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
-                      UnConfirmed Balances
+                      Unconfirmed Balances
                     </NavLink>
                   </li>
                   <li className="flex items-center">
@@ -123,7 +128,7 @@ const SideNav = () => {
                     <NavLink
                       to="/account-summary/pending-settlement"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
                       Pending Settlements
@@ -134,19 +139,24 @@ const SideNav = () => {
                     <NavLink
                       to="/account-summary/transaction-balances"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
-                      Balance Transactions
+                      Transaction Balances
                     </NavLink>
                   </li>
                 </ul>
               </div>
             </li>
             <li className="rounded-sm">
-              <div
+              <NavLink
                 onClick={() => setSubTransactionsOpen(!isSubTransactionsOpen)}
-                className="flex items-center p-2 space-x-3 rounded-md cursor-pointer hover:bg-red-100 mx-2"
+                to="/transactions"
+                className={({ isActive }) =>
+                  isActive
+                    ? "flex items-center p-2 space-x-3 rounded-md bg-red-100 mx-2 text-red-700"
+                    : "flex items-center p-2 space-x-3 rounded-md hover:bg-red-100 mx-2"
+                }
               >
                 <AiOutlineDollar
                   color={
@@ -162,7 +172,7 @@ const SideNav = () => {
                 ) : (
                   <IoIosArrowForward className="w-4 h-4 ml-auto" />
                 )}
-              </div>
+              </NavLink>
               <div
                 className={`transition-max-height duration-300 ease-in-out overflow-hidden ${
                   isSubTransactionsOpen ? "max-h-96" : "max-h-0"
@@ -172,34 +182,34 @@ const SideNav = () => {
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-800 mr-2"></span>
                     <NavLink
-                      to="/transactions"
+                      to="/transactions/review"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
-                      Sub Transaction 1
+                     Review
                     </NavLink>
                   </li>
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-800 mr-2"></span>
                     <NavLink
-                      to="/transactions/confirmed"
+                      to="/transactions/confirmations"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
-                      Sub Transaction 2
+                      Confirmations
                     </NavLink>
                   </li>
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-800 mr-2"></span>
                     <NavLink
-                      to="/transactions/unconfirmed"
+                      to="/transactions/add-transactions"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
-                      Sub Transaction 3
+                      Add Transactions
                     </NavLink>
                   </li>
                 </ul>
@@ -270,7 +280,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub1"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
                       Sub Transaction 1
@@ -281,7 +291,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub2"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
                       Sub Transaction 2
@@ -321,7 +331,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub1"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
                       Sub Transaction 1
@@ -332,7 +342,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub2"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
                       Sub Transaction 2
@@ -343,7 +353,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub3"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
                       Sub Transaction 3
@@ -354,7 +364,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub3"
                       className={({ isActive }) =>
-                        isActive ? "text-red-700" : "text-red-700"
+                        isActive ? "text-red-700" : "text-gray-600"
                       }
                     >
                       Sub Transaction 3
