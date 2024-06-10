@@ -77,7 +77,7 @@ const SideNav = () => {
               >
                 <AiOutlineDollar
                   color={
-                    location.pathname === "/transactions"
+                    location.pathname === "/account-summary"
                       ? "#930006"
                       : "#5B6B79"
                   }
@@ -99,7 +99,7 @@ const SideNav = () => {
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-800 mr-2"></span>
                     <NavLink
-                      to="/transactions/confirmed"
+                      to="/account-summary/confirmed-balances"
                       className={({ isActive }) =>
                         isActive ? "text-red-700" : "text-red-700"
                       }
@@ -110,7 +110,7 @@ const SideNav = () => {
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-800 mr-2"></span>
                     <NavLink
-                      to="/transactions/unconfirmed"
+                      to="/account-summary/unconfirmed-balances"
                       className={({ isActive }) =>
                         isActive ? "text-red-700" : "text-red-700"
                       }
@@ -121,7 +121,7 @@ const SideNav = () => {
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-800 mr-2"></span>
                     <NavLink
-                      to="/transactions/pending"
+                      to="/account-summary/pending-settlement"
                       className={({ isActive }) =>
                         isActive ? "text-red-700" : "text-red-700"
                       }
@@ -132,7 +132,7 @@ const SideNav = () => {
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-800 mr-2"></span>
                     <NavLink
-                      to="/transactions/balance"
+                      to="/account-summary/transaction-balances"
                       className={({ isActive }) =>
                         isActive ? "text-red-700" : "text-red-700"
                       }

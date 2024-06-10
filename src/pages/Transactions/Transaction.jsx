@@ -9,7 +9,6 @@ const Transaction = () => {
   const Transactions = transactions.transactions
   return (
     <div>
-      <SearchBar Transactions={Transactions} />
       <div className="mt-3 mx-3 rounded-md flex flex-row gap-5 items-center">
         <h1 className="text-md text-left "> Dashboard</h1>
         <RiArrowRightSLine color="#c0c0c0" />
