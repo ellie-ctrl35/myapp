@@ -20,7 +20,7 @@ const TransactionsTabs = () => {
     return (
       <ThemeProvider theme={theme}>
       <div>
-        <Tabs value={currentTab} aria-label="transactions tabs">
+        <Tabs value={currentTab} aria-label="transactions tabs" style={{background:"#F3F5F7"}}>
           <Tab label="Review" value="review" component={Link} to="/transactions/review" />
           <Tab label="Confirmations" value="confirmations" component={Link} to="/transactions/confirmations" />
           <Tab label="Add Transactions" value="add-transactions" component={Link} to="/transactions/add-transactions" />
