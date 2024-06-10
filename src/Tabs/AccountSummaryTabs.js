@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, Link, Routes, Route } from 'react-router-dom';
 import { Tabs, Tab, IconButton } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose';
+import { AiOutlineCloseCircle } from '@react-icons/all-files/ai/AiOutlineCloseCircle';
 import ConfirmedBalances from '../pages/AccountSummary/ConfirmedBalances';
 import UnConfirmations from '../pages/AccountSummary/UnConfirmations';
 import PendingSettlement from '../pages/AccountSummary/PendingSettlement';
@@ -25,16 +25,27 @@ const tabsData = [
 
 const AccountSummaryTabs = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const currentTab = location.pathname.split('/')[2] || 'confirmed-balances';
 
   const [openTabs, setOpenTabs] = useState(tabsData);
 
   const handleTabClose = (tabValue) => {
-    setOpenTabs(openTabs.filter(tab => tab.value !== tabValue));
+    setOpenTabs(prevTabs => {
+      const newTabs = prevTabs.filter(tab => tab.value !== tabValue);
+      if (currentTab === tabValue && newTabs.length > 0) {
+        // Navigate to the first tab if the current tab is closed
+        navigate(`/account-summary/${newTabs[0].value}`);
+      } else if (newTabs.length === 0) {
+        // Navigate to a fallback route if no tabs are open
+        navigate('/dashboard');
+      }
+      return newTabs;
+    });
   };
 
   return (
-    <ThemeProvider theme={theme}> 
+    <ThemeProvider theme={theme}>
       <div>
         <Tabs value={currentTab} aria-label="Account Summary tabs" style={{background:"#F3F5F7"}}>
           {openTabs.map(tab => (
@@ -50,7 +61,7 @@ const AccountSummaryTabs = () => {
                       handleTabClose(tab.value);
                     }}
                   >
-                    <AiOutlineClose fontSize="small" />
+                    <AiOutlineCloseCircle fontSize="small" color='#930006' />
                   </IconButton>
                 </div>
               }
