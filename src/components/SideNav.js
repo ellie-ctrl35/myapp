@@ -85,9 +85,9 @@ const SideNav = () => {
                 />
                 {!isCollapsed && <span>Account Summary</span>}
                 {isTransactionsOpen ? (
-                  <IoIosArrowDown className="w-4 h-4" />
+                  <IoIosArrowDown className="w-4 h-4 ml-auto" />
                 ) : (
-                  <IoIosArrowForward className="w-4 h-4" />
+                  <IoIosArrowForward className="w-4 h-4 ml-auto" />
                 )}
               </div>
               <div
@@ -101,9 +101,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/confirmed"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Confirmed Balances
@@ -114,9 +112,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/unconfirmed"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       UnConfirmed Balances
@@ -127,9 +123,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/pending"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Pending Settlements
@@ -140,14 +134,12 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/balance"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Balance Transactions
                     </NavLink>
-                  </li>  
+                  </li>
                 </ul>
               </div>
             </li>
@@ -166,9 +158,9 @@ const SideNav = () => {
                 />
                 {!isCollapsed && <span>Transactions</span>}
                 {isSubTransactionsOpen ? (
-                  <IoIosArrowDown className="w-4 h-4" />
+                  <IoIosArrowDown className="w-4 h-4 ml-auto" />
                 ) : (
-                  <IoIosArrowForward className="w-4 h-4" />
+                  <IoIosArrowForward className="w-4 h-4 ml-auto" />
                 )}
               </div>
               <div
@@ -182,9 +174,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Sub Transaction 1
@@ -193,11 +183,9 @@ const SideNav = () => {
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-800 mr-2"></span>
                     <NavLink
-                      to="/transactions/sub2"
+                      to="/transactions/confirmed"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Sub Transaction 2
@@ -206,11 +194,9 @@ const SideNav = () => {
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-800 mr-2"></span>
                     <NavLink
-                      to="/transactions/sub3"
+                      to="/transactions/unconfirmed"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Sub Transaction 3
@@ -268,9 +254,9 @@ const SideNav = () => {
                 />
                 {!isCollapsed && <span>Users & Profile</span>}
                 {!isTrans ? (
-                  <IoIosArrowDown className="w-4 h-4" />
+                  <IoIosArrowDown className="w-4 h-4 ml-auto" />
                 ) : (
-                  <IoIosArrowForward className="w-4 h-4" />
+                  <IoIosArrowForward className="w-4 h-4 ml-auto" />
                 )}
               </div>
               <div
@@ -284,9 +270,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub1"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Sub Transaction 1
@@ -297,9 +281,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub2"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Sub Transaction 2
@@ -323,9 +305,9 @@ const SideNav = () => {
                 />
                 {!isCollapsed && <span>Redde Actions</span>}
                 {isRedde ? (
-                  <IoIosArrowDown className="w-4 h-4 self-end" />
+                  <IoIosArrowDown className="w-4 h-4 ml-auto" />
                 ) : (
-                  <IoIosArrowForward className="w-4 h-4 ml-8" />
+                  <IoIosArrowForward className="w-4 h-4 ml-auto" />
                 )}
               </div>
               <div
@@ -339,9 +321,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub1"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Sub Transaction 1
@@ -352,9 +332,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub2"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Sub Transaction 2
@@ -365,9 +343,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub3"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Sub Transaction 3
@@ -378,9 +354,7 @@ const SideNav = () => {
                     <NavLink
                       to="/transactions/sub3"
                       className={({ isActive }) =>
-                        isActive
-                          ? "text-red-700"
-                          : "text-red-700"
+                        isActive ? "text-red-700" : "text-red-700"
                       }
                     >
                       Sub Transaction 3

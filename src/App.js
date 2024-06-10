@@ -3,6 +3,8 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Transaction from "./pages/Transactions/Transaction";
 import DefaultLayout from "./components/DefaultLayout";
+import Confirmations from './pages/Transactions/Confirmations';
+import AddTransactions from './pages/Transactions/AddTransactions';
 
 function App() {
   return (
@@ -18,10 +20,10 @@ function App() {
           }
         />
         <Route
-          path="/transactions"
+          path="/transactions/*"
           element={
             <DefaultLayout>
-              <Transaction />
+                <Route path="/" element={<Transaction />} />
             </DefaultLayout>
           }
         />
