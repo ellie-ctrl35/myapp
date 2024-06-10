@@ -1,15 +1,24 @@
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import { Tabs, Tab } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Transaction from '../pages/Transactions/Transaction';
 import AddTransactions from '../pages/Transactions/AddTransactions';
 import Confirmations from '../pages/Transactions/Confirmations';
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ff0000', // red color for the indicator
+    },
+  },
+});
 
 const TransactionsTabs = () => {
     const location = useLocation();
     const currentTab = location.pathname.split('/')[2] || 'confirmed-balances';
   
     return (
+      <ThemeProvider theme={theme}>
       <div>
         <Tabs value={currentTab} aria-label="transactions tabs">
           <Tab label="Review" value="review" component={Link} to="/transactions/review" />
@@ -22,6 +31,7 @@ const TransactionsTabs = () => {
           <Route path="add-transactions" element={<AddTransactions />} />
         </Routes>
       </div>
+      </ThemeProvider>
     );
   };
 
