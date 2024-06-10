@@ -8,7 +8,7 @@ import Confirmations from '../pages/Transactions/Confirmations';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#ff0000', // red color for the indicator
+      main: '#930006', // red color for the indicator
     },
   },
 });

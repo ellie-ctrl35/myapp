@@ -9,7 +9,7 @@ import TransactionBalances from '../pages/AccountSummary/TransactionBalances';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#ff0000', // red color for the indicator
+      main: '#930006', // red color for the indicator
     },
   },
 });
@@ -24,10 +24,10 @@ const AccountSummaryTabs = () => {
         <Tabs value={currentTab} aria-label="Account Summary tabs" indicatorColor="primary"
         textColor="inherit"
         sx={{ '& .Mui-selected': { color: 'red' } }}>
-          <Tab label="Confirmed Balances" value="confirmed-balances" sx={{ color: currentTab === 'confirmed-balances' ? 'red' : 'inherit' }} component={Link} to="/account-summary/confirmed-balances" />
-          <Tab label="Unconfirmed Balances" value="unconfirmed-balances" sx={{ color: currentTab === 'unconfirmed-balances' ? 'red' : 'inherit' }} component={Link} to="/account-summary/unconfirmed-balances" />
-          <Tab label="Pending Settlement" value="pending-settlement" sx={{ color: currentTab === 'pending-settlement' ? 'red' : 'inherit' }} component={Link} to="/account-summary/pending-settlement" />
-          <Tab label="Transaction Balances" value="transaction-balances" sx={{ color: currentTab === 'transaction-balances' ? 'red' : 'inherit' }} component={Link} to="/account-summary/transaction-balances" />
+          <Tab label="Confirmed Balances" value="confirmed-balances" sx={{ color: currentTab === 'confirmed-balances' ? '#930006' : 'inherit' }} component={Link} to="/account-summary/confirmed-balances" />
+          <Tab label="Unconfirmed Balances" value="unconfirmed-balances" sx={{ color: currentTab === 'unconfirmed-balances' ? '#930006' : 'inherit' }} component={Link} to="/account-summary/unconfirmed-balances" />
+          <Tab label="Pending Settlement" value="pending-settlement" sx={{ color: currentTab === 'pending-settlement' ? '#930006' : 'inherit' }} component={Link} to="/account-summary/pending-settlement" />
+          <Tab label="Transaction Balances" value="transaction-balances" sx={{ color: currentTab === 'transaction-balances' ? '#930006' : 'inherit' }} component={Link} to="/account-summary/transaction-balances" />
         </Tabs>
         <Routes>
           <Route path="confirmed-balances" element={<ConfirmedBalances />} />
